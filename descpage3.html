@@ -1,0 +1,238 @@
+	<!DOCTYPE html>
+<html>
+<head>
+	<title>Gallery Example </title>
+	<meta charset="utf-8"><meta name="viewport"content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/slippry.css" />
+<link rel="stylesheet" href="css/template2collum.css"/>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="js/slippry.min.js"></script>
+</head>
+<body>
+<header>
+<script type="text/javascript">
+$(document).ready (function()  {
+	$("nav").accessibleDropDown();
+	$('#slider3').anythingSlider ({
+			theme					:'metallic',
+			expand					:false,
+			resizeContents			:true,
+			aspectRatio				:true,
+			showMultiple			:1,
+			changeBy				:1,
+			startPanel				:1,
+			autoplay				:true
+	})
+	.find('.panel')
+	.find('div[class*=caption]').css (
+	{
+			position				:'absolute'
+	})
+	.end()
+	.hover(function()   {
+		showCaptions( $(this));
+	},
+	function()   {
+		hideCaptions( $(this));
+	}); // end slider 3
+	showCaptions = function(el){
+		var $this = el;
+		if ($this.find('.caption-bottom').length)  {
+			$this.find('.caption-bottom')
+			.show()
+			.animate({bottom: 0, opacity: 1}, 400);
+		}
+	};
+	hideCaptions = function(el)  {
+		var $this = el;
+		if ($this.find('.caption-bottom').length)  {
+			$this.find('.caption-bottom')
+			.stop()
+			.animate({ bottom: -50, opacity:0}, 350, function()  {
+			$this.find('.caption-bottom').hide();  });
+		}
+	};
+	hideCaptions( $('#slider3.panel') );
+	$('#dashboard').hover(
+	 function(){
+	 $(this).stop().animate(
+	 {
+	  left: '0',
+	  backgroundColor: '#483838'
+	  },
+       1500,
+    'easeOutCubic'
+	);//end animate
+	},
+	   function(){
+	   $(this).stop().animate(
+	   {
+		left: '-92px',
+		backgroundColor: '#e1e2dd'
+		},
+		1500,
+		'easeOutBounce'
+		);//end animate
+		}
+		);//end hover
+	$('#dashboard img').hover(
+		function() {
+		 $(this).stop().animate(
+		 {opacity:1.0}, 500);
+		 },
+		 function(){
+		  $(this).stop().animate(
+		  {opacity:0.4}, 500);
+		});//end hover
+		$('nav ul li a').hover(
+		function(){
+		  $()
+		$(this).stop().animate( //
+		{
+		  paddingRight: '2.5em'
+		  },1000);
+		  },
+		  function(){
+		  $(this).stop().animate(
+		  {
+		    paddingRight: '1.2em'
+			}, 1000);
+			});// end nav hover
+			
+			$('nav ul li a').hover(
+			function(){
+			 $(this).stop().animate(
+			{
+			  paddingRight:'1.2em'
+			 },1000 );
+			});//end nav hover 
+	}); //end ready
+	$.fn.accessibleDropDown = function() {
+		var el= $(this);
+		$("a", el).focus(function() {
+			$(this).parents("li").addClass("hover");
+		}).blur(function()  {
+			$(this).parents("li").removeClass("hover");
+		});
+	}
+</script>
+
+<script>
+	background-color
+	nav ul li a:hover,
+	nav ul li a:focus,
+	nav ul li a:active,
+	nav ul li.hover a{
+		background-color: #e1e2dd;
+		transition: background-color 1s ease-out;  /*<-- this line will produce a transition  */
+		color: #483838;}
+</script>
+
+	<div id="wrapper">
+		<center>
+<ul id="slippry-demo">
+  <li>
+    <a href="#slide1"><img src="images/fl-studio-man-2149902_640.jpg" alt="Welcome to my website!"></a>
+  </li>
+  <li>
+    <a href="#slide2"><img src="images/dj-2573925_640.jpg"  alt="Galleries I have learned"></a>
+  </li>
+  <li>
+    <a href="#slide3"><img src="images/pioneer-698515_640.jpg" alt="gallery "></a>
+  </li>
+</ul>
+
+  <div id="dashboard">
+				<a href="#"><img src="icons/fb.png" width="70" height="70" title="Follow on Facebook"></a>
+				<a href="#"><img src="icons/g+.png" width="70" height="70" title="Add to Circles on Google+"></a>
+				<a href="#"><img src="icons/ttr.png" width="70" height="70" title="Follow on Twitter"></a>
+				<a href="#"><img src="icons/ln.png" width="70" height="70" title="Add on LinkdIn"></a>
+				<a href="#"><img src="icons/ig.png" width="70" height="70" title="Follow on Instagram"></a>
+				<a href="#"><img src="icons/pnt.png" width="70" height="70" title="Follow on Pintrest"></a>
+				<a href="#"><img src="icons/yt.png" width="70" height="70" title="Subscribe to our YouTube Channel"></a>
+				<script type="text/javascript">
+    jQuery(document).ready(function(){
+}); jQuery('#slippry-demo').slippry()
+</script>	
+ </div>
+</center>
+<header>
+
+	
+		<nav>
+			<ul>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+					<li><a href="descpage1.html">Gallery 1</a></li>
+					<li><a href="descpage2.html">Gallery 2</a></li>
+					<li><a href="descpage3.html">Gallery 3</a></li>
+					<li><a href="imageReveal.html">Gallery 4</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>	
+			</nav>
+		</header>
+</div>	
+		<section>
+			<article class="cols">
+			<h2 class="lead cols-span">Website Design </h2>
+			<p class="lead cols-span">		
+	My website design was focused around the pictures I used in the slider. 
+	Really wanted edgy colors and a technical flow.
+	I used CSS layouts and CSS menus to style my site. 
+	JQuery elements to help my form validate.
+	Also using a full page scroll with a responsive CSS controlled web design.
+			</p> 
+
+			</article>
+		</section>
+<footer>
+
+
+		
+	<p>Copyright &copy; 2016 All Rights Reserved</p>
+	<div id="minidash">
+	<a href="#"><img src="icons/fb_sm.jpg" width="32" height="32" title="Follow on Facebook"></a>
+	<a href="#"><img src="icons/g+_sm.jpg" width="32" height="32" title="Add to Circles on Goggle +"></a>
+	<a href="#"><img src="icons/ttr_sm.jpg" width="32" height="32" title="Follow on Twitter"></a>
+	<a href="#"><img src="icons/ln_sm.jpg" width="32" height="32" title="Add on LinkdIn"></a>
+	<a href="#"><img src="icons/ig_sm.jpg" width="32" height="32" title="Follow on Instagram"></a>
+	<a href="#"><img src="icons/pnt_sm.jpg" width="32" height="32" title="Follow on Pintrest"></a>
+	<a href="#"><img src="icons/yt_sm.jpg" width="32" height="32" title="Subscribe to our YouTube Channel"></a>
+	</div>
+ <br><br>
+    <br><br>
+    <center>
+  <form>
+<input type="button" value="Portfolio HOME" onclick="window.location.href='http://mrobertsboyster.mydevryportfolio.com/PortfolioIndex/portfolioindex.html'" />
+<style>
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #646464;
+  background-color:#646464;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #000;
+}
+
+.button:hover {background-color: }
+
+.button:active {
+  background-color: #646464;
+  box-shadow: 0 5px #dfdfdf;
+  transform: translateY(4px);
+}
+</style>
+</form>
+</center>
+<br><br>
+	</footer>
+	</div>
+	</body>
+	</html>
+	
+	
+	

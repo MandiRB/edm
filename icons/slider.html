@@ -1,0 +1,164 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+	<title>| HTML5 CSS |</title>
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="jquery.anythingslider.min.js"></script>
+	<link href="anythingSlider.css" rel="stylesheet">
+	<link href="theme-metallic.css" rel="stylesheet">
+	<link rel="stylesheet" href="slider.css">
+		<script type="text/javascript">
+$(document).ready (function()  {
+		$("nav").accessibleDropDown();
+	$('#slider3').anythingSlider ({
+			theme					:'metallic',
+			expand					:false,
+			resizeContents			:true,
+			aspectRatio				:true,
+			showMultiple			:1,
+			changeBy				:1,
+			startPanel				:1,
+			autoplay				:true
+	})
+	.find('.panel')
+	.find('div[class*=caption]').css (
+	{
+			position				:'absolute'
+	})
+	.end()
+	.hover(function()   {
+		showCaptions( $(this));
+	},
+	function()   {
+		hideCaptions( $(this));
+	}); // end slider 3
+	showCaptions = function(el){
+		var $this = el;
+		if ($this.find('.caption-bottom').length)  {
+			$this.find('.caption-bottom')
+			.show()
+			.animate({bottom: 0, opacity: 1}, 400);
+		}
+	};
+	hideCaptions = function(el)  {
+		var $this = el;
+		if ($this.find('.caption-bottom').length)  {
+			$this.find('.caption-bottom')
+			.stop()
+			.animate({ bottom: -50, opacity: 0}, 350, function()  {
+			$this.find('.caption-bottom').hide();  });
+		}
+	};
+	hideCaptions( $('#slider3.panel') );
+	}); // end ready
+	$.fn.accessibleDropDown = function ()  {
+		var el = $(this);
+		$("a", el).focus(function()  {
+			$(this).parents("li").addClass("hover");
+		}).blur(function()  {
+			$(this).parents("li").removeClass("hover");
+		});
+	}
+	</script>
+	<style>
+	nav ul li a:hover,
+	nav ul li a:focus,
+	nav ul li a:active,
+	nav ul li.hover a{
+		background-color: #e1e2dd;
+		transition: background-color 1s ease-out;  /*<-- this line will produce a transition  */
+		color: #483838;}
+	</style>
+</head>
+<body>     
+<div id="wrapper">
+	<header>
+	<h1>The Guitar Shop</h1>
+	<nav>
+		<ul>
+			<li><a href="slider.html">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Guitars</a>
+				<ul>
+					<li><a href="#">Acoustics</a></li>
+					<li><a href="#">Electric</a></li>
+					<li><a href="#">Bass</a></li>
+					<li><a href="#">Special</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Services</a>
+				<ul>
+					<li><a href="#">Re-string</a></li>
+					<li><a href="#">Repairs</a></li>
+					<li><a href="#">Lessons</a></li>
+					<li><a href="#">Consignment</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Information</a>
+				<ul>
+					<li><a href="#">Sub-Topic 1</a></li>
+					<li><a href="#">Sub-Topic 2</a></li>
+					<li><a href="#">Sub-Topic 3</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+		</nav>
+		</header>
+		<aside>
+		<p>The sidebar content</p>
+			<p>The sidebar content</p>
+			<p>The sidebar content</p>
+			<p>The sidebar content</p>
+			<p>The sidebar content</p>
+			<p>The sidebar content</p>
+			<p>The sidebar content</p>
+		</aside>
+	<section>
+			<article>
+			<ul id="slider3">
+			<li>
+			<div class="caption-top">
+				Nothing like a little LP Goldtop to get you going!
+			</div>
+			<a href="descPage1.html">
+			<img src="images/guitar01.jpg" alt=""></a>
+			</li>
+			<li>
+			<a href="descPage2.html">
+			<img src="images/guitar02.jpg" alt=""></a>
+			<div class="caption-right">
+				Acoustic blues can be so much fun!
+			</div>
+			</li>
+			<li>
+			<a href="descPage3.html">
+			<img src="images/guitar03.jpg" alt=""></a>
+			<div class="caption-bottom">
+				Ebony Fretboard and brass wound Elixir strings
+			</div>
+			</li>
+			<li>
+			<a href="descPage4.html">
+			<img src="images/guitar04.jpg" alt=""></a>
+			<div class="caption-left">
+				Step on up and play us a tune.
+			</div>
+			</li>
+			</ul>
+			</article>
+			<p class="spec">
+			<article class="cols">
+				<h2 class="cols-span">Sem sit amet</h2>
+				<p class="lead cols-span">Etiam et nunc pulvinar, tempus lorem et, ullamcorper libero.</p>
+				<p>Praesent semper urna eleifend mauris posuere molestie. Quisque at posuere ante. Nunc pharetra porta ante nec dictum. Etiam vel pellentesque lectus. Fusce rutrum, libero quis bibendum bibendum, lectus justo viverra est, eget volutpat ante nisl convallis ligula. Suspendisse ac diam vel mi accumsan ultricies vitae ac eros. Curabitur iaculis, urna sed blandit aliquam, augue dolor condimentum tortor, sed vestibulum metus turpis eget arcu. Phasellus efficitur sed enim eget gravida. Nunc tincidunt ex in elit ultrices, eget elementum eros consequat. In at bibendum arcu. Morbi non lorem sed nunc auctor gravida nec in sapien. Etiam feugiat luctus justo ac dictum. Etiam at interdum orci, non consequat turpis. Curabitur porta orci eleifend, laoreet turpis id, rhoncus tortor. Duis malesuada ut purus in pulvinar.</p>
+			</article>
+		</section>
+		<footer>
+		</footer>
+		</div>
+	</body>
+	</html>
+	
+	
